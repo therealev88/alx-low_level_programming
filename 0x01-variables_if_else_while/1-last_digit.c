@@ -3,8 +3,11 @@
 #include <stdio.h>
 /* The last digit*/
 
-/* main function - Entry point
-return - always 0*/
+/*
+ * Main - Entry point
+ * Description - The Last digit
+ * return - Always 0
+ */
 int main(void)
 {
 	int n, m;
