@@ -1,12 +1,15 @@
-/*Write a C program that prints exactly "Programming is like building a multilingual puzzle, followed by a new line.*/
-
+/**
+*main - Entry point
+*
+*Return: always 0
+*
+*/
 #include <stdio.h>
-int main()  
+int main(void)
 {
-    
-    char str[] = "Programming is like building a multilingual puzzle\n";
-    puts(str);
-    
-    return 0;
-    
+	char print_text[] = "\"Programming is like building a multilingual puzzle";
+
+	puts(print_text);
+
+	return (0);
 }
