@@ -9,7 +9,6 @@ Your program should compile without warning when using the -Wall gcc option*/
 int main()
 {
  
- char text_str    ;
  printf("%s", "with proper grammar, but the outcome is a piece of art,\n");
 
 return 0;
