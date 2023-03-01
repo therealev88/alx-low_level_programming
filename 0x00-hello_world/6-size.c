@@ -3,12 +3,11 @@
  * 
  * return - 0
  * 
- * */
+ */
  
 
 #include <stdio.h>
 int main(void)
-
 {
 printf("Size of a char: %lu byte(s)\n", sizeof(char)); 
 printf("Size of a int: %lu byte(s)\n", sizeof(int)); 
