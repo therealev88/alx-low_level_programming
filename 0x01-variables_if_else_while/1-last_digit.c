@@ -1,13 +1,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* The last digit*/
-
-/*
+/**
  * Main - Entry point
- * Description - The Last digit
+ * Description: The Last digit
  * return - Always 0
  */
+
 int main(void)
 {
 	int n, m;
