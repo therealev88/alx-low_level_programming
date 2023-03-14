@@ -1,51 +1,52 @@
-#include <stdlib.h>
-#include <string.h>
 #include "main.h"
+#include <stdlib.h>
 
 /**
- * argstostr - function declaration
- * @ac: no of args
- * @av: array of pointer
- * Return: char type
+ * argstostr - concatenates all the arguments of a program.
+ * @ac: argument count.
+ * @av: argument vector.
+ *
+ * Return: pointer of an array of char
  */
-
-char *argstostr(int ac, char **av);
-
-/**
- * argstostr - function definition
- * @ac: number of arguments
- * @av: array of pointers to argumnets
- * Description: Return NULL of pointer to string
- * Return: NULL or a pointer to a string
- */
-
 char *argstostr(int ac, char **av)
 {
-	int row, column, len = 0, total_len = 0;
-	char *str;
+	char *aout;
+	int c, i, j, ia;
 
-	if (ac == 0 || av == NULL)
+	if (ac == 0)
 		return (NULL);
 
-	for (row = 0; row < ac; row++)
+	for (c = i = 0; i < ac; i++)
 	{
-		len = strlen(av[row]);
-		total_len += len + 1;
+		if (av[i] == NULL)
+			return (NULL);
+
+		for (j = 0; av[i][j] != '\0'; j++)
+			c++;
+		c++;
 	}
 
-	str = (char *) malloc(total_len * sizeof(char));
-	if (str == NULL)
-		return (NULL);
+	aout = malloc((c + 1) * sizeof(char));
 
-	len = 0;
-	for (row = 0; row < ac; row++)
+	if (aout == NULL)
 	{
-		for (column = 0; av[row][column] != '\0'; column++)
+		free(aout);
+		return (NULL);
+	}
+
+	for (i = j = ia = 0; ia < c; j++, ia++)
+	{
+		if (av[i][j] == '\0')
 		{
-			str[len++] = av[row][column];
+			aout[ia] = '\n';
+			i++;
+			ia++;
+			j = 0;
 		}
-		str[len++] = '\n';
+		if (ia < c - 1)
+			aout[ia] = av[i][j];
 	}
-	str[len] = '\0';
-	return (str);
+	aout[ia] = '\0';
+
+	return (aout);
 }
