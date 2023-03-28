@@ -1,1 +1,1 @@
-More Mallorca - Free
+More Mallorca
